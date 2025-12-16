@@ -70,3 +70,7 @@ build/
 # Gradle files
 .gradle/
 build/
+
+# React UI (Vite) folders to ignore
+/ui/node_modules/
+/ui/dist/
