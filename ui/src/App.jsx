@@ -36,6 +36,13 @@ function App() {
     }
   };
 
+  const handleClear = () => {
+    setEmailContext('');
+    setGeneratedReply('');
+    setError('');
+  };
+
+
   return (
     <div style={{ padding: '40px', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
       <h2>Smart Email Assistant</h2>
@@ -74,13 +81,35 @@ function App() {
           </div>
         </div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          style={{ marginTop: '20px', padding: '10px 20px', cursor: loading ? 'not-allowed' : 'pointer' }}
-        >
-          {loading ? 'Generating...' : 'Generate Reply'}
-        </button>
+        <div style={{ marginTop: '20px', display: 'flex', gap: '12px' }}>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              padding: '10px 20px',              
+              backgroundColor: '#eee',
+              border: '1px solid #ccc',
+              cursor: loading ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {loading ? 'Generating...' : 'Generate Reply'}
+          </button>
+
+          <button
+            type="button"
+            onClick={handleClear}
+            disabled={loading}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#eee',
+              border: '1px solid #ccc',
+              cursor: loading ? 'not-allowed' : 'pointer'
+            }}
+          >
+            Clear
+          </button>
+        </div>
+
       </form>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
