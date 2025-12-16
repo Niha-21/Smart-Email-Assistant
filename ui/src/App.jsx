@@ -38,33 +38,41 @@ function App() {
 
   return (
     <div style={{ padding: '40px', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
-      <h2>Email Assistant</h2>
+      <h2>Smart Email Assistant</h2>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="emailContext">Enter email context:</label>
-        <textarea
-          id="emailContext"
-          rows="6"
-          style={{ width: '100%', marginTop: '8px', padding: '8px' }}
-          value={emailContext}
-          onChange={(e) => setEmailContext(e.target.value)}
-          required
-        />
+        <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <label htmlFor="emailContext" style={{ marginBottom: '4px', display: 'inline-block' }}>
+              Enter email context:
+            </label>
+            <textarea
+              id="emailContext"
+              rows="6"
+              style={{ width: '100%', padding: '8px' }}
+              value={emailContext}
+              onChange={(e) => setEmailContext(e.target.value)}
+              required
+            />
+          </div>
 
-        <label htmlFor="tone" style={{ display: 'block', marginTop: '16px' }}>
-          Select Tone:
-        </label>
-        <select
-          id="tone"
-          value={tone}
-          onChange={(e) => setTone(e.target.value)}
-          style={{ padding: '8px', marginTop: '4px' }}
-        >
-          <option value="professional">Professional</option>
-          <option value="casual">Casual</option>
-          <option value="friendly">Friendly</option>
-          <option value="formal">Formal</option>
-        </select>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+            <label htmlFor="tone" style={{ marginBottom: '4px', display: 'inline-block' }}>
+              Select Tone:
+            </label>
+            <select
+              id="tone"
+              value={tone}
+              onChange={(e) => setTone(e.target.value)}
+              style={{ padding: '8px', minWidth: '150px' }}
+            >
+              <option value="professional">Professional</option>
+              <option value="casual">Casual</option>
+              <option value="friendly">Friendly</option>
+              <option value="formal">Formal</option>
+            </select>
+          </div>
+        </div>
 
         <button
           type="submit"
