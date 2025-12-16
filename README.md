@@ -48,6 +48,13 @@ The backend integrates with **Google Gemini LLM** to generate responses, while t
 
 ---
 
+## 🔹 Screenshots
+
+### Smart Email Assistant UI with Generated Email Reply
+![Generated Reply](screenshots/generated-reply.png)
+
+---
+
 ## 🔹 API Example
 
 ### Generate Email Reply
@@ -68,6 +75,7 @@ Hi,
 Thank you for your message. I appreciate the update on the project’s successful completion. I would be happy to discuss the next steps at your convenience.
 
 Best regards,
+
 [Your Name]
 
 ---
@@ -82,22 +90,29 @@ git clone https://github.com/Niha-21/Smart-Email-Assistant.git
 ### 2️⃣ Backend Setup (Spring Boot)
 
 Configure application.properties:
+
 gemini.api.key=YOUR_API_KEY
+
 gemini.api.url=YOUR_API_URL
 
 mvn clean install
+
 mvn spring-boot:run
 
 Backend will start on:
+
 http://localhost:8080
 
 ### 3️⃣ Frontend Setup (React)
 
 cd ui
+
 npm install
+
 npm run dev
 
 Frontend will start on:
+
 http://localhost:5173
 
 You can now generate AI-powered email replies using the Smart Email Assistant!
@@ -120,5 +135,6 @@ You can now generate AI-powered email replies using the Smart Email Assistant!
 Software Engineer | Backend / Full-Stack Developer  
 
 🔗 LinkedIn: https://www.linkedin.com/in/niha-shaikh-811685170/
+
 💻 GitHub: https://github.com/Niha-21
 
