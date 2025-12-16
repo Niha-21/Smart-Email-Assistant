@@ -44,34 +44,68 @@ function App() {
 
 
   return (
-    <div style={{ padding: '40px', fontFamily: 'Arial', maxWidth: '600px', margin: 'auto' }}>
-      <h2>Smart Email Assistant</h2>
+    <div
+      style={{
+        padding: '40px',
+        fontFamily: 'Segoe UI, Arial, sans-serif',
+        maxWidth: '600px',
+        margin: 'auto',
+        backgroundColor: '#f1f8f4',
+        borderRadius: '12px'
+      }}
+    >
+      <h2 style={{ color: '#2e7d32', marginBottom: '16px' }}>
+        Smart Email Assistant
+      </h2>
 
       <form onSubmit={handleSubmit}>
-        <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
+        <div style={{ display: 'flex', gap: '24px', marginTop: '8px' }}>
+          {/* Email Context */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <label htmlFor="emailContext" style={{ marginBottom: '4px', display: 'inline-block' }}>
-              Enter email context:
+            <label
+              htmlFor="emailContext"
+              style={{ marginBottom: '6px', fontWeight: '600', color: '#2e7d32' }}
+            >
+              Enter email context
             </label>
             <textarea
               id="emailContext"
               rows="6"
-              style={{ width: '100%', padding: '8px' }}
               value={emailContext}
               onChange={(e) => setEmailContext(e.target.value)}
               required
+              style={{
+                width: '100%',
+                padding: '10px',
+                borderRadius: '8px',
+                border: '1px solid #a5d6a7',
+                outline: 'none',
+                fontSize: '14px'
+              }}
             />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
-            <label htmlFor="tone" style={{ marginBottom: '4px', display: 'inline-block' }}>
-              Select Tone:
+          {/* Tone */}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <label
+              htmlFor="tone"
+              style={{ marginBottom: '6px', fontWeight: '600', color: '#2e7d32' }}
+            >
+              Select Tone
             </label>
             <select
               id="tone"
               value={tone}
               onChange={(e) => setTone(e.target.value)}
-              style={{ padding: '8px', minWidth: '150px' }}
+              style={{
+                padding: '10px',
+                minWidth: '160px',
+                borderRadius: '8px',
+                border: '1px solid #a5d6a7',
+                backgroundColor: '#ffffff',
+                fontSize: '14px',
+                cursor: 'pointer'
+              }}
             >
               <option value="professional">Professional</option>
               <option value="casual">Casual</option>
@@ -81,14 +115,17 @@ function App() {
           </div>
         </div>
 
-        <div style={{ marginTop: '20px', display: 'flex', gap: '12px' }}>
+        {/* Buttons */}
+        <div style={{ marginTop: '24px', display: 'flex', gap: '12px' }}>
           <button
             type="submit"
             disabled={loading}
             style={{
-              padding: '10px 20px',              
-              backgroundColor: '#eee',
-              border: '1px solid #ccc',
+              padding: '10px 22px',
+              backgroundColor: '#a5d6a7',
+              border: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
               cursor: loading ? 'not-allowed' : 'pointer'
             }}
           >
@@ -100,28 +137,39 @@ function App() {
             onClick={handleClear}
             disabled={loading}
             style={{
-              padding: '10px 20px',
-              backgroundColor: '#eee',
-              border: '1px solid #ccc',
+              padding: '10px 22px',
+              backgroundColor: '#c8e6c9',
+              border: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
               cursor: loading ? 'not-allowed' : 'pointer'
             }}
           >
             Clear
           </button>
         </div>
-
       </form>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: '#c62828', marginTop: '16px' }}>{error}</p>}
 
       {generatedReply && (
-        <div style={{ marginTop: '20px', whiteSpace: 'pre-wrap', background: '#f3f3f3', padding: '10px' }}>
-          <h3>Generated Reply:</h3>
+        <div
+          style={{
+            marginTop: '24px',
+            whiteSpace: 'pre-wrap',
+            background: '#e8f5e9',
+            padding: '14px',
+            borderRadius: '8px',
+            border: '1px solid #a5d6a7'
+          }}
+        >
+          <h3 style={{ color: '#2e7d32' }}>Generated Reply</h3>
           <p>{generatedReply}</p>
         </div>
       )}
     </div>
   );
+
 }
 
 export default App;
