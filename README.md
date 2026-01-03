@@ -95,15 +95,17 @@ gemini.api.key=YOUR_API_KEY
 
 gemini.api.url=YOUR_API_URL
 
+Run below commands:
+
 mvn clean install
 
 mvn spring-boot:run
 
-Backend will start on:
-
-http://localhost:8080
+Backend will start on: http://localhost:8080
 
 ### 3️⃣ Frontend Setup (React)
+
+Run below commands:
 
 cd ui
 
@@ -111,9 +113,7 @@ npm install
 
 npm run dev
 
-Frontend will start on:
-
-http://localhost:5173
+Frontend will start on: http://localhost:5173
 
 You can now generate AI-powered email replies using the Smart Email Assistant!
 
